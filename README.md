@@ -9,9 +9,11 @@ I've recompiled the arm64 binary release from Control-D-Inc as it includes upx c
 CCR2004 only have 128MB of storage but I still had left 64% free after setting up this container.
 
 1. Import .tar file into your Mikrotik using its File Manager or FTP.
-2. Create a new Mount given any name "ctrld", Src= /"Root Dir of container"/config, Dst=/"name of your folder in Mikrotik"
+2. Create a new Mount giving any name "ctrld", Src= /"Root Dir of container"/config, Dst=/"name of your folder in Mikrotik"
    e.g. name=ctrld src=/controld/config dst=/config
 3. Upload your config.toml into the config folder in Mikrotik e.g. /config/config.toml
-4. Create a new container with the parameters: Interface="veth1" Root Dir="controld" Mounts="ctrld". Check boxes for Logging and Start on Boot (optional)
+4. Create a new container with the parameters: Interface="veth1" Root Dir="controld" Mounts="ctrld". Check the boxes for "Logging" and "Start on Boot". "Logging" is optional.
 5. Once container is created, you should see Tag=ctrld130:debian OS:linux Arch:arm64.
 6. You can then start the container.
+
+You can change the names of folders accordingly but do match these name change to th parameters of your container and mount.
